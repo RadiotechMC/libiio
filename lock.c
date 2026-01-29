@@ -19,14 +19,14 @@
 #ifndef PTHREAD_MAX_NAMELEN_NP
 #define PTHREAD_MAX_NAMELEN_NP	16
 #endif
-#if defined(HAS_PTHREAD_SETNAME_NP)
+#if 0
 #if defined(__APPLE__)
 #define iio_thrd_create_set_name(thid, name)	pthread_setname_np(name)
 #else
 #define iio_thrd_create_set_name(thid, name)	pthread_setname_np(thid, name)
 #endif
 #else
-#define iio_thrd_create_set_name(thid, name)
+#define iio_thrd_create_set_name(thid, name) (void)0
 #endif
 
 struct iio_mutex {
